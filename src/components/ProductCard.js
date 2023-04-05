@@ -4,7 +4,7 @@ import "./ProductCard.css";
 
 export const ProductCard = ({product}) => {
   const {addToCart, cartList, removeFromCart} = useCart()
-  const {id,name, price, image} = product;
+  const {name, price, image} = product;
   const [isInCart, setIsInCart] = useState(false)
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const ProductCard = ({product}) => {
     } else {
       setIsInCart(false)
     }
-  },[cartList, id])
+  },[cartList, product.id])
 
   return (
     <div className="productCard">
